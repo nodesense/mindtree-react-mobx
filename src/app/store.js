@@ -1,6 +1,7 @@
 import {observable, autorun} from 'mobx';
 
 import calculator from './state/Calculator';
+import productState from './product/state/ProductState';
 
 // store object
 
@@ -8,6 +9,7 @@ import calculator from './state/Calculator';
 const store = {
     // key: state instance
     calculator: calculator, // state instance
+    productState: productState
     // other states
 }
 

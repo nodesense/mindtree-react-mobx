@@ -15,7 +15,9 @@ import Contact from './components/Contact';
 import Counter from './components/Counter';
 import Calc from './components/Calc';
 
-// import ProductList from './product/components/ProductList';
+import ProductList from './product/components/ProductList';
+import ProductEdit from './product/components/ProductEdit';
+
 // import Cart from './cart/components/Cart';
 // import Login from './auth/components/Login';
 
@@ -37,7 +39,8 @@ export default class App extends Component {
                 <Switch>
                     <Route path="/" exact component={Home} />
                     {/* <Route path="/cart" exact component={Cart} /> */}
-                    {/* <Route path="/products" exact component={ProductList} /> */}
+                    <Route path="/products" exact component={ProductList} />
+                    <Route path="/products/edit/:id" component={ProductEdit} />
                     {/* <Route path="/login" exact component={Login} /> */}
                     <Route path="/calc" exact component={Calc} />
                     <Route path="/counter" exact component={Counter} />
