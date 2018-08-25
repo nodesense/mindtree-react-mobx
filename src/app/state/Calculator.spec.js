@@ -1,9 +1,9 @@
 import calculator from './Calculator';
 
-describe("Calculator spec ", () => {
-    it("calc test", () => {
+describe('calc test', () => {
+    it("calc sum test ", () => {
         expect(calculator.sum).toBe(0)
-        calculator.add(1)
-        expect(calculator.sum).toBe(1)
+        calculator.add(10)
+        expect(calculator.sum).toBe(10)
     })
 })

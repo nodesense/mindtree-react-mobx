@@ -19,6 +19,7 @@ class ProductState {
 
     @action
     setProducts(products) {
+        console.log("Received")
         this.products = products;
         this.loading = false;
     }
@@ -32,7 +33,7 @@ class ProductState {
     getProducts() {
         this.loading = true;
 
-        ProductService
+        return ProductService
             .getProducts()
             .then (products => this.setProducts(products))
             .catch ( error => this.setLoading(false))
@@ -48,27 +49,47 @@ class ProductState {
         this.product = product;
     }
 
-    @action
+    // @action
+    // getProduct(id) {
+    //     // calls render two times one for each api
+    //     // ProductService.getProduct(id)
+    //     //               .then (product => this.setProduct(product));
+
+    //     // ProductService.getBrands()
+    //     //               .then (brands => this.setBrands(brands))
+
+    //     Promise.all ([
+    //         ProductService.getProduct(id),
+    //         ProductService.getBrands()
+    //     ]).then (results => {
+    //         // results[0] shall have product,
+    //         // results[1] shall have brands
+    //         this.setProduct(results[0]);
+    //         this.setBrands(results[1]);
+    //       //  this.setLoading(true);
+    //     })
+    // }
+
+    // https://github.com/mobxjs/mobx-react/issues/259
     getProduct(id) {
-        // calls render two times one for each api
-        // ProductService.getProduct(id)
-        //               .then (product => this.setProduct(product));
-
-        // ProductService.getBrands()
-        //               .then (brands => this.setBrands(brands))
-
-        Promise.all ([
+        return Promise.all ([
             ProductService.getProduct(id),
             ProductService.getBrands()
-        ]).then (results => {
+        ])
+        // .then (results => {
+        //             // results[0] shall have product,
+        //             // results[1] shall have brands
+        //             this.setProduct(results[0]);
+        //             this.setBrands(results[1]);
+        //           //  this.setLoading(true);
+        // })
+        
+        .then (action ("fetchSuccess", results => {
             // results[0] shall have product,
             // results[1] shall have brands
-            this.setProduct(results[0]);
-            this.setBrands(results[1]);
-          //  this.setLoading(true);
-        })
-
-
+            this.product = results[0];
+            this.brands = results[1];
+        }))
     }
 
     @action

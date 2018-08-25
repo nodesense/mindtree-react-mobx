@@ -14,9 +14,7 @@ export default class Calc extends Component {
         super(props);
     }
     
-    componentDidMount() {
-          
-    }
+   
 
     add = () => {
         this.props

@@ -35,7 +35,7 @@ export default class App extends Component {
         return (
             <Router>
             <div> 
-            <Header />
+            <Header  />
                 <Switch>
                     <Route path="/" exact component={Home} />
                     {/* <Route path="/cart" exact component={Cart} /> */}

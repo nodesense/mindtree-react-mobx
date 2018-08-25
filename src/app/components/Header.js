@@ -7,7 +7,7 @@ import {NavLink} from 'react-router-dom';
 
 export default function Header(props) { 
         return (
-            <div> 
+            <div  > 
             <h2>Mobx App</h2>
 
             <NavLink to="/" 

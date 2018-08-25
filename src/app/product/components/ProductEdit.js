@@ -37,7 +37,7 @@ export default class ProductEdit extends Component {
         let {brands, product, loading} = this.props.productState;
         console.log("Product Edit render");
         return (
-            <div> 
+            <div > 
             <h2>Product Edit</h2>
             <p>Name {product.name}</p>
             <p>Brands Total {brands.length}</p>
