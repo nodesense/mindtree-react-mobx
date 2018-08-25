@@ -1,5 +1,5 @@
 ## Introduction
-    Mobx starter
+Mobx starter
 
     git clone https://github.com/nodesense/mindtree-react-mobx
 
@@ -11,27 +11,17 @@
 
 
 
-## Software Requirements
-
-- Install Git SCM https://git-scm.com/
-- Install Node.js 6.11 or 8.9 LTS
-- Install Visual Studio Code latest
-
-## Get Started
-
-To start with repository,
-
-> git clone https://github.com/nodesense/react-workshop
-
-> cd react-workshop
-
-> npm install
-
-> npm start
-
 The above commands shall let you started. 
 
 If you face command not found issue for git, you need to install it from https://git-scm.com/ or clone the repository and follow the above commands.
+
+## Software Requirements
+
+- Install Git SCM https://git-scm.com/
+- Install Node.js   8.11 LTS
+- Install Visual Studio Code latest
+- Install Chrome
+ 
 
 ## API Server
 
