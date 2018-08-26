@@ -6,6 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/styles.css">
     <title>React App</title>
+
+    <script>
+        if ('serviceWorker' in window.navigator) {
+            console.log('Service worker supported')
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                window.registration = registration;
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        if ('caches' in window) {
+            console.log('caches supported')
+        }
+
+
+        if ('indexedDB' in window) {
+            console.log('indexed db supported')
+        }
+    </script>
+
 </head>
 <body>
     

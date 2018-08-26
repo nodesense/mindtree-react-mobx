@@ -17,12 +17,15 @@ export default function Header(props) {
                     Home
             </NavLink>
 
+         {
+                navigator.onLine && 
             <NavLink to="/products" 
                     exact 
                     className="button"  
                     activeClassName="success" >
                     Products
             </NavLink>
+         }
 
             <NavLink to="/cart" 
                     exact 
