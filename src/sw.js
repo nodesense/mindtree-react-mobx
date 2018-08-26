@@ -11,7 +11,7 @@ var urlsToCache = [
   '/assets/styles.css',
   '/assets/loading.gif',
   '/offline.html',
-  '/app.bundle.js'
+  // '/app.bundle.js' // not for  development
 ];
 
 
